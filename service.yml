@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes
+spec:
+  type: LoadBalancer
+  selector:
+    app: kyrosbus
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 3000
+      nodePort: 3111
